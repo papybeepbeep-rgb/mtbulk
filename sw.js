@@ -1,6 +1,6 @@
 // Mtbulk SDC Trans – service worker (fonctionnement hors ligne)
 // Change le numéro de version à chaque mise à jour des fichiers.
-const CACHE = "mtbulk-sdc-1.20410";
+const CACHE = "mtbulk-sdc-1.20710.5";
 const FICHIERS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener("install", e => {

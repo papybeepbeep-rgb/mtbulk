@@ -1,0 +1,15 @@
+AHROU - version 1.20710.5
+=========================
+
+1_Fichiers_GitHub  (7 fichiers)
+  -> A envoyer dans votre depot GitHub (Add file > Upload files > Commit changes).
+     Glissez les FICHIERS, pas le dossier.
+     Cette mise a jour : index.html, sw.js ET manifest.json changent
+     (nom sous l'icone : "Ahrou").
+
+2_Listing_horaires_clients.xlsx
+  -> Le listing complet des clients. A garder pour vous.
+     NE PAS l'envoyer sur GitHub : le depot est public.
+
+Apres l'envoi sur GitHub : attendre 2-3 minutes, puis fermer et rouvrir
+l'application sur le telephone.
