@@ -1,23 +1,24 @@
-// Mtbulk SDC Trans – service worker (fonctionnement hors ligne)
-// Change le numéro de version à chaque mise à jour des fichiers.
-const CACHE = "mtbulk-sdc-1.20710.5";
-const FICHIERS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png"];
+// Ahrou – fonctionnement hors connexion
+// Change ce numéro à chaque nouvelle version pour forcer la mise à jour sur les téléphones.
+const CACHE = "ahrou-v17";
+const FILES = ["./", "./index.html", "./manifest.webmanifest", "./ahrou-icon.svg",
+  "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(FICHIERS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", e => {
-  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+    .then(() => self.clients.claim()));
 });
-// Réseau d'abord (pour avoir la dernière version), sinon le cache (hors ligne)
 self.addEventListener("fetch", e => {
-  if (e.request.method !== "GET") return;
-  e.respondWith(
-    fetch(e.request).then(r => {
-      if (r.ok && new URL(e.request.url).origin === location.origin) {
-        const copie = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copie));
-      }
-      return r;
-    }).catch(() => caches.match(e.request).then(r => r || caches.match("./index.html")))
-  );
+  const url = new URL(e.request.url);
+  if (e.request.method !== "GET" || url.origin !== location.origin) return; // Google, Drive… : jamais en cache
+  if (e.request.mode === "navigate") {
+    // Page : d'abord Internet (pour avoir la dernière version), sinon la copie hors ligne
+    e.respondWith(fetch(e.request).then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put("./index.html", copy)); return r; })
+      .catch(() => caches.match("./index.html")));
+    return;
+  }
+  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
 });

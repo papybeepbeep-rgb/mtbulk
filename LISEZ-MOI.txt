@@ -1,15 +1,40 @@
-AHROU - version 1.20710.5
-=========================
+AHROU – Dossier à déposer sur GitHub Pages
+==========================================
 
-1_Fichiers_GitHub  (7 fichiers)
-  -> A envoyer dans votre depot GitHub (Add file > Upload files > Commit changes).
-     Glissez les FICHIERS, pas le dossier.
-     Cette mise a jour : index.html, sw.js ET manifest.json changent
-     (nom sous l'icone : "Ahrou").
+CONTENU DU DOSSIER
+  index.html              L'application Ahrou (page principale)
+  confidentialite.html    Règles de confidentialité (demandées par Google)
+  manifest.webmanifest    Fiche d'installation (nom « Ahrou », icône, plein écran)
+  sw.js                   Fonctionnement hors connexion
+  ahrou-icon.svg          Icône (version vectorielle)
+  apple-touch-icon.png    Icône iPhone (180 px)
+  icon-192.png            Icône Android (192 px)
+  icon-512.png            Icône Android (512 px)
+  icon-maskable-512.png   Icône Android découpable en rond
+  .nojekyll               Fichier vide, à garder (évite un traitement inutile par GitHub)
 
-2_Listing_horaires_clients.xlsx
-  -> Le listing complet des clients. A garder pour vous.
-     NE PAS l'envoyer sur GitHub : le depot est public.
+METTRE EN LIGNE (une seule fois)
+  1. Sur github.com, crée un dépôt (bouton « New »), par ex. « ahrou », en Public.
+  2. Dans le dépôt : « Add file » → « Upload files » → glisse TOUS les fichiers de ce dossier
+     (pas le dossier lui-même), puis « Commit changes ».
+     Astuce : si le fichier .nojekyll n'apparaît pas (fichier caché), ce n'est pas grave.
+  3. « Settings » → « Pages » → Source : « Deploy from a branch », Branch : « main », dossier « / (root) » → « Save ».
+  4. Après 1 à 2 minutes, l'adresse s'affiche, par ex. : https://papybeepbeep-rgb.github.io/ahrou/
 
-Apres l'envoi sur GitHub : attendre 2-3 minutes, puis fermer et rouvrir
-l'application sur le telephone.
+INSTALLER SUR LE TÉLÉPHONE
+  iPhone  : ouvrir l'adresse dans Safari → bouton Partager → « Sur l'écran d'accueil ».
+  Android : ouvrir l'adresse dans Chrome → menu ⋮ → « Installer l'application ».
+
+METTRE À JOUR PLUS TARD
+  Remplace index.html (« Add file » → « Upload files »), puis dans sw.js change
+  "ahrou-v9" en "ahrou-v10" (puis v11, v12…) pour que les téléphones prennent la nouvelle version.
+
+À COMPLÉTER AVANT DE DIFFUSER
+  • Google Drive : l'ID client Google est déjà en place dans index.html.
+    Dans la console Google (Clients → ton client Web → Origines JavaScript autorisées),
+    il faut avoir exactement : https://papybeepbeep-rgb.github.io   (sans /ahrou/ et sans / final)
+  • PayPal : déjà en place (paypal.me/Ahrou1613/0.99EUR et paypal.me/Ahrou1613/10EUR).
+
+IMPORTANT
+  • Le Générateur de codes NE doit PAS être mis sur GitHub : il est réservé à toi.
+  • Un dépôt GitHub Pages gratuit est public : tout le monde peut lire index.html.
