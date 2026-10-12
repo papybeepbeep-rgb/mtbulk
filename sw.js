@@ -1,6 +1,6 @@
 // Ahrou – fonctionnement hors connexion
 // Change ce numéro à chaque nouvelle version pour forcer la mise à jour sur les téléphones.
-const CACHE = "ahrou-v17";
+const CACHE = "ahrou-v24";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./ahrou-icon.svg",
   "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png"];
 

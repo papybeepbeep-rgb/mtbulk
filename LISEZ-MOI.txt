@@ -38,3 +38,9 @@ METTRE À JOUR PLUS TARD
 IMPORTANT
   • Le Générateur de codes NE doit PAS être mis sur GitHub : il est réservé à toi.
   • Un dépôt GitHub Pages gratuit est public : tout le monde peut lire index.html.
+
+ABONNEMENTS (depuis la version 1.9)
+Les clients reçoivent un LIEN d'activation signé, créé avec le fichier
+« generateur-ahrou.html » (sur ton PC uniquement). Ce fichier contient ta clé
+privée : ne le mets JAMAIS sur GitHub. L'appli ne contient que la clé publique,
+qui sert seulement à vérifier les liens.
