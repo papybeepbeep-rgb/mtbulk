@@ -1,6 +1,6 @@
 // MBSDC – service worker (fonctionnement hors ligne)
 // Change le numéro de version à chaque mise à jour des fichiers.
-const CACHE = "mbsdc-1.21210.1";
+const CACHE = "mbsdc-1.23102026";
 const FICHIERS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
